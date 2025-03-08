@@ -1,6 +1,6 @@
 {
     "name": "ibex/crud-generator",
-    "description": "Laravel CRUD Generator",
+    "description": "Laravel CRUD Generator for module",
     "license": "MIT",
     "authors": [
         {
