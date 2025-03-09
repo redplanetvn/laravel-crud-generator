@@ -1,9 +1,6 @@
-@extends('{{layout}}')
+@extends('layouts/layoutMaster')
 
-@section('template_title')
-    {{ ${{modelNameLowerCase}}->name ?? __('Show') . " " . __('{{modelTitle}}') }}
-@endsection
-
+@section('title', '{{ ${{modelNameLowerCase}}->name ?? __('Show') . " " . __('{{modelTitle}}') }}')
 @section('content')
     <section class="content container-fluid">
         <div class="row">

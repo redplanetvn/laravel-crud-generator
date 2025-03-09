@@ -181,7 +181,7 @@ abstract class GeneratorCommand extends Command implements PromptsForMissingInpu
      */
     protected function _getControllerPath($name): string
     {
-        return app_path($this->_getNamespacePath($this->controllerNamespace)."{$name}Controller.php");
+        return app_path("Modules/".$this->options['module']."/".$this->_getNamespacePath($this->controllerNamespace)."{$name}Controller.php");
     }
 
     /**
@@ -191,7 +191,7 @@ abstract class GeneratorCommand extends Command implements PromptsForMissingInpu
      */
     protected function _getApiControllerPath($name): string
     {
-        return app_path($this->_getNamespacePath($this->apiControllerNamespace)."{$name}Controller.php");
+        return app_path("Modules/".$this->options['module']."/".$this->_getNamespacePath($this->apiControllerNamespace)."{$name}Controller.php");
     }
 
     /**
@@ -201,7 +201,7 @@ abstract class GeneratorCommand extends Command implements PromptsForMissingInpu
      */
     protected function _getResourcePath($name): string
     {
-        return app_path($this->_getNamespacePath($this->resourceNamespace)."{$name}Resource.php");
+        return app_path("Modules/".$this->options['module']."/".$this->_getNamespacePath($this->resourceNamespace)."{$name}Resource.php");
     }
 
     /**
@@ -211,7 +211,7 @@ abstract class GeneratorCommand extends Command implements PromptsForMissingInpu
      */
     protected function _getLivewirePath($name): string
     {
-        return app_path($this->_getNamespacePath($this->livewireNamespace)."{$name}.php");
+        return app_path("Modules/".$this->options['module']."/".$this->_getNamespacePath($this->livewireNamespace)."{$name}.php");
     }
 
     /**
@@ -221,7 +221,7 @@ abstract class GeneratorCommand extends Command implements PromptsForMissingInpu
      */
     protected function _getRequestPath($name): string
     {
-        return app_path($this->_getNamespacePath($this->requestNamespace)."{$name}Request.php");
+        return app_path("Modules/".$this->options['module']."/".$this->_getNamespacePath($this->requestNamespace)."{$name}Request.php");
     }
 
     /**
@@ -231,7 +231,7 @@ abstract class GeneratorCommand extends Command implements PromptsForMissingInpu
      */
     protected function _getModelPath($name): string
     {
-        return $this->makeDirectory(app_path($this->_getNamespacePath($this->modelNamespace)."$name.php"));
+        return $this->makeDirectory("Modules/".$this->options['module']."/".app_path($this->_getNamespacePath($this->modelNamespace)."$name.php"));
     }
 
     /**
@@ -547,7 +547,7 @@ abstract class GeneratorCommand extends Command implements PromptsForMissingInpu
     {
         $this->options['route'] = null;
         $this->options['stack'] = $this->argument('stack');
-
+        $this->options['module'] = $this->argument('module');
         return $this;
     }
 

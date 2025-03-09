@@ -1,8 +1,7 @@
-@extends('{{layout}}')
+@extends('layouts/layoutMaster')
 
-@section('template_title')
-    {{modelTitlePlural}}
-@endsection
+@section('title', '{{modelTitlePlural}}')
+
 
 @section('content')
     <div class="container-fluid">

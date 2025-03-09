@@ -1,8 +1,6 @@
-@extends('{{layout}}')
+@extends('layouts/layoutMaster')
 
-@section('template_title')
-    {{ __('Update') }} {{modelTitle}}
-@endsection
+@section('title', '{{ __('Update {{modelTitle}}') }}')
 
 @section('content')
     <section class="content container-fluid">

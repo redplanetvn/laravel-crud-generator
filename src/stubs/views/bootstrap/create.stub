@@ -1,8 +1,6 @@
-@extends('{{layout}}')
+@extends('layouts/layoutMaster')
 
-@section('template_title')
-    {{ __('Create') }} {{modelTitle}}
-@endsection
+@section('title', '{{ __('Create {{modelTitle}}') }}')
 
 @section('content')
     <section class="content container-fluid">
